@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#16293f"/><circle cx="35" cy="42" r="9" fill="none" stroke="#ff5964" stroke-width="4"/><circle cx="58" cy="42" r="9" fill="none" stroke="#ff5964" stroke-width="4"/><path d="M30 60 q20 14 40 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></template>
+<meta name="ext-resource-dependency" content="assets/prog-basic.png">
+<meta name="ext-resource-dependency" content="assets/prog-signature.png">
+<meta name="ext-resource-dependency" content="assets/prog-lab.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Open Sauce Sans';font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:700;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:800;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-800-normal.woff2') format('woff2');}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Nunito Sans',system-ui,sans-serif;color:#16293f;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+@keyframes hy-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+::selection{background:#3b7cc0;color:#fff;}
+</style>
+</helmet>
+
+<div data-screen-label="Hyouman Program" style="width:100%;overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ navPad }};background:{{ navBg }};backdrop-filter:blur(10px);box-shadow:{{ navShadow }};transition:padding .35s ease, background .35s ease, box-shadow .35s ease;">
+    <nav style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
+        <img src="assets/logo-hyouman.png" alt="Hyouman Education" style="height:33px;width:auto;display:block;">
+      </a>
+      <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+          <a href="{{ link.href }}" style="position:relative;text-decoration:none;color:{{ link.color }};font-weight:{{ link.weight }};font-size:14.5px;padding:9px 14px;border-radius:9px;transition:color .2s ease, background .2s ease;" style-hover="color:#16293f;background:#eef3f8;">{{ link.label }}</a>
+        </sc-for>
+        <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:linear-gradient(135deg,#f5333f,#ff6470);color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;box-shadow:0 8px 20px rgba(245,51,63,.32);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px rgba(245,51,63,.42);">Konsultasi Sekarang</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" style="padding-top:84px;">
+
+    <!-- ===== HERO ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:34px 24px 0;">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(158deg,#4987be 0%,#2c5a85 48%,#16293f 100%);box-shadow:0 24px 60px rgba(22,41,63,.22);display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:stretch;opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease;">
+        <div style="padding:clamp(34px,4.5vw,60px);display:flex;flex-direction:column;justify-content:center;">
+          
+          <h1 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:-1.4px;margin:18px 0 0;color:#ffffff;">Program Pengembangan<br>Diri Berbasis <span style="color:#ff5964;">Kekuatan</span></h1>
+          <p style="max-width:460px;margin:18px 0 0;font-size:clamp(15px,1.5vw,16.5px);line-height:1.62;color:#ffffff;font-weight:500;">Melalui assessment, konsultasi, dan coaching, kami membantu individu memahami kekuatan dirinya, menemukan arah yang lebih jelas, dan mengembangkan potensi secara lebih terarah.</p>
+          <a href="#programs" style="margin-top:28px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#ff5964;color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:15px;padding:14px 26px;border-radius:999px;box-shadow:0 12px 28px rgba(255,89,100,.4);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 18px 36px rgba(255,89,100,.54);">Pelajari Selengkapnya <span>→</span></a>
+        </div>
+        <div style="position:relative;min-height:340px;">
+          <img src="assets/prog-hero.png" alt="Sesi konsultasi Hyouman" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(54px,7vw,86px) 24px;">
+      <h2 data-reveal="0" style="text-align:center;font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.6vw,42px);line-height:1.12;letter-spacing:-1px;margin:0;color:#16293f;opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;">Mengapa Berkembang<br>bersama <span style="color:#3b7cc0;">Hyouman?</span></h2>
+      <div style="margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+        <sc-for list="{{ whys }}" as="w" hint-placeholder-count="4">
+          <div data-reveal="{{ w.d }}" style="position:relative;background:#f4f7fb;border-radius:18px;padding:28px 24px;cursor:default;opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease, box-shadow .3s ease, background .3s ease;" style-hover="background:#fff;box-shadow:0 18px 40px rgba(22,41,63,.14);transform:translateY(-6px);">
+            <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b7cc0,#16293f);display:flex;align-items:center;justify-content:center;color:#fff;">
+              <span style="font-family:'Open Sauce Sans';font-weight:800;font-size:22px;">{{ w.icon }}</span>
+            </div>
+            <h3 style="font-family:'Open Sauce Sans';font-weight:800;font-size:18px;line-height:1.25;letter-spacing:-.3px;margin:18px 0 0;color:#16293f;">{{ w.t }}</h3>
+            <p style="margin:9px 0 0;font-size:14px;line-height:1.55;color:#5a6b7e;font-weight:500;">{{ w.s }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAMS ===== -->
+    <section id="programs" style="background:#f4f7fb;padding:clamp(54px,7vw,90px) 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 24px;">
+        <div style="text-align:center;">
+          <span data-reveal="0" style="display:inline-block;color:#3b7cc0;font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Pilih Jalurmu</span>
+          <h2 data-reveal="1" style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.8vw,42px);line-height:1.12;letter-spacing:-1px;color:#16293f;margin:12px 0 0;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Pilihan Program untuk<br>Perjalananmu</h2>
+        </div>
+
+        <div style="margin-top:clamp(34px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;align-items:stretch;">
+          <sc-for list="{{ programs }}" as="p" hint-placeholder-count="3">
+            <article data-reveal="{{ p.d }}" style="position:relative;display:flex;flex-direction:column;background:#fff;border:{{ p.border }};border-radius:22px;overflow:hidden;box-shadow:{{ p.shadow }};opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease, box-shadow .35s ease;" style-hover="transform:translateY(-8px);box-shadow:0 28px 56px rgba(22,41,63,.2);">
+              <sc-if value="{{ p.popular }}" hint-placeholder-val="{{ true }}">
+                <span style="position:absolute;top:16px;right:16px;z-index:2;background:#ff5964;color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:11.5px;letter-spacing:.5px;padding:6px 13px;border-radius:999px;box-shadow:0 8px 18px rgba(255,89,100,.4);">★ Most Popular</span>
+              </sc-if>
+              <div style="position:relative;height:118px;overflow:hidden;">
+                <img src="{{ p.img }}" alt="{{ p.title }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div style="padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;">
+                <h3 style="font-family:'Open Sauce Sans';font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.4px;margin:0;color:#16293f;">{{ p.title }}</h3>
+                <p style="margin:10px 0 0;font-size:14px;line-height:1.55;color:#5a6b7e;font-weight:500;">{{ p.desc }}</p>
+                <p style="margin:20px 0 10px;font-family:'Open Sauce Sans';font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#3b7cc0;">Ideal untuk</p>
+                <div style="display:flex;flex-direction:column;gap:9px;flex:1;">
+                  <sc-for list="{{ p.ideal }}" as="it" hint-placeholder-count="3">
+                    <div style="display:flex;align-items:flex-start;gap:10px;">
+                      <span style="flex:none;margin-top:1px;width:18px;height:18px;border-radius:50%;background:#e3eef9;color:#3b7cc0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;">✓</span>
+                      <span style="font-size:14px;line-height:1.45;color:#3a4d61;font-weight:600;">{{ it }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid #eef2f6;">
+                  <div>
+                    <p style="margin:0;font-size:12.5px;color:#7b8a9a;font-weight:600;">{{ p.priceLabel }}</p>
+                    <p style="margin:3px 0 0;font-family:'Open Sauce Sans';font-weight:800;font-size:23px;letter-spacing:-.6px;color:#16293f;">{{ p.price }}</p>
+                  </div>
+                  <span style="flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#5a6b7e;background:#f4f7fb;padding:6px 11px;border-radius:999px;">⏱ {{ p.dur }}</span>
+                </div>
+                <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:{{ p.btnBg }};color:{{ p.btnColor }};font-family:'Open Sauce Sans';font-weight:700;font-size:14.5px;padding:13px 20px;border-radius:999px;box-shadow:{{ p.btnShadow }};transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-2px);">{{ p.cta }} <span>→</span></a>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCREENING ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(54px,7vw,92px) 24px;">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(135deg,#1d3a57,#16293f);box-shadow:0 24px 56px rgba(22,41,63,.26);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease;">
+        <div style="padding:clamp(34px,4.5vw,58px);">
+          <span style="display:inline-block;color:#8fb6dd;font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;">Belum Yakin?</span>
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(25px,3.2vw,38px);line-height:1.12;letter-spacing:-.8px;color:#fff;margin:14px 0 0;">Apakah Program Ini<br>Tepat untukmu?</h2>
+          <p style="margin:18px 0 0;max-width:440px;font-size:15.5px;line-height:1.62;color:#bdcfe1;font-weight:500;">Setiap orang memiliki kebutuhan pengembangan yang berbeda. Dapatkan screening singkat dan <strong style="color:#fff;">Free Discovery Call</strong> untuk membantu memahami kebutuhan, tantangan, dan tujuan pengembanganmu sebelum memutuskan mengikuti program.</p>
+          <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#ff5964;color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:15px;padding:14px 26px;border-radius:999px;box-shadow:0 14px 30px rgba(255,89,100,.4);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 20px 38px rgba(255,89,100,.54);">Dapatkan Screening Test <span>→</span></a>
+        </div>
+        <div style="position:relative;align-self:stretch;min-height:320px;">
+          <img src="assets/prog-mid.png" alt="Workshop pengembangan diri Hyouman" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="cta" style="max-width:1180px;margin:0 auto;padding:0 24px clamp(48px,6vw,80px);">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#f5333f 0%,#ff5a64 100%);box-shadow:0 26px 60px rgba(22,41,63,.2);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:end;opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+        <div style="position:relative;min-height:320px;align-self:stretch;">
+          <img src="assets/prog-cta.png" alt="Peserta program Hyouman" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.9;">
+          
+        </div>
+        <div style="padding:clamp(36px,5vw,60px);">
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-1.2px;color:#fff;margin:0;">SIAP MEMULAI<br>PERJALANANMU?</h2>
+          <p style="margin:20px 0 0;max-width:440px;font-size:15.5px;line-height:1.6;color:#fff;font-weight:600;opacity:.95;">Kenali kekuatanmu, temukan arah yang lebih jelas, dan ambil langkah berikutnya dengan lebih percaya diri.</p>
+          <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#fff;color:#f5333f;font-family:'Open Sauce Sans';font-weight:800;font-size:15.5px;padding:15px 28px;border-radius:999px;box-shadow:0 14px 30px rgba(120,0,8,.28);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 20px 40px rgba(120,0,8,.4);">Jadwalkan Konsultasi <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer style="background:#16293f;color:#cdd7e2;padding:56px 24px 40px;">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;align-items:start;">
+        <div style="max-width:300px;">
+          <a href="index.html" style="display:inline-flex;align-items:flex-start;text-decoration:none;">
+            <img src="assets/logo-hyouman-white.png" alt="Hyouman Education" style="height:46px;width:auto;display:block;">
+          </a>
+          <p style="margin:20px 0 0;font-size:14.5px;line-height:1.6;color:#aebccb;font-weight:600;">Mendukung individu dan organisasi berkembang, bukan dengan memperbaiki kelemahan, tapi dengan memaksimalkan kekuatan.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">LAYANAN</p>
+          <sc-for list="{{ footLayanan }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">PROGRAM</p>
+          <sc-for list="{{ footProgram }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">HUBUNGI KAMI</p>
+          <sc-for list="{{ footSocial }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" target="_blank" rel="noopener" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <p style="max-width:1180px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#7e92a8;">© 2026 TheHyouman. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+  </main>
+
+  <button onClick="{{ scrollTop }}" aria-label="Kembali ke atas" style="position:fixed;right:24px;bottom:24px;z-index:60;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#3b7cc0,#16293f);color:#fff;font-size:20px;box-shadow:0 12px 28px rgba(22,41,63,.4);opacity:{{ topBtnOpacity }};transform:{{ topBtnTransform }};transition:opacity .3s ease, transform .3s ease;" style-hover="transform:translateY(-4px);">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false };
+
+  renderVals() {
+    const navLinks = [
+      { label: 'Home', href: 'Hyouman Home.html', color: '#33465c', weight: '600' },
+      { label: 'Program', href: '#top', color: '#16293f', weight: '800' },
+      { label: 'Layanan Perusahaan', href: 'Layanan Perusahaan.html', color: '#33465c', weight: '600' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html', color: '#33465c', weight: '600' },
+      { label: 'Kontak Kami', href: 'Kontak Kami.html', color: '#33465c', weight: '600' },
+    ];
+    const whys = [
+      { icon: '◆', t: 'Berbasis Strengths, Bukan Kekurangan', s: 'Fokus mengembangkan apa yang membuatmu unggul, bukan menambal kelemahan.', d: '0' },
+      { icon: '↗', t: 'Relevan untuk Karier dan Kehidupan', s: 'Insight yang bisa diterapkan pada keputusan kerja maupun keseharian.', d: '1' },
+      { icon: '✦', t: 'Insight yang Langsung Bisa Diterapkan', s: 'Hasil konkret dan actionable, bukan sekadar teori atau laporan.', d: '2' },
+      { icon: '◑', t: 'Didampingi Coach Berpengalaman', s: 'Proses dipandu coach dan konsultan terpilih yang berkualitas.', d: '3' },
+    ];
+    const programs = [
+      {
+        d: '0', popular: true,
+        border: '2px solid #ff5964', shadow: '0 20px 46px rgba(255,89,100,.16)',
+        title: 'SEAL A - Basic',
+        img: 'assets/prog-basic.png',
+        desc: 'Tes talents mapping dan sesi bareng konsultan buat bedah hasilnya, berdasarkan penilaian kekuatan kamu.',
+        ideal: ['Eksplorasi arah karier', 'Mengenal strengths diri', 'Pengembangan diri sehari-hari', 'Meningkatkan kepercayaan diri'],
+        priceLabel: 'Mulai dari', price: 'Rp1.111.000', dur: '±60 Menit',
+        btnBg: 'linear-gradient(135deg,#f5333f,#ff6470)', btnColor: '#fff', btnShadow: '0 12px 26px rgba(245,51,63,.34)',
+        cta: 'Pilih Basic',
+      },
+      {
+        d: '1', popular: false,
+        border: '1px solid #e6edf4', shadow: '0 16px 38px rgba(22,41,63,.1)',
+        title: 'SEAL A - Signature',
+        img: 'assets/prog-signature.png',
+        desc: 'Tes talents mapping dan sesi bareng Lilin Imam buat bedah hasilnya, disesuaikan langsung dengan peran, tantangan, dan konteks yang sedang kamu hadapi.',
+        ideal: ['Pemimpin dan manager', 'Business owner dan entrepreneur', 'Profesional yang menghadapi keputusan penting'],
+        priceLabel: 'Mulai dari', price: 'Rp2.333.000', dur: '±90 Menit',
+        btnBg: '#16293f', btnColor: '#fff', btnShadow: '0 12px 26px rgba(22,41,63,.26)',
+        cta: 'Pilih Signature',
+      },
+      {
+        d: '2', popular: false,
+        border: '1px solid #e6edf4', shadow: '0 16px 38px rgba(22,41,63,.1)',
+        title: 'Strengths Architecture Lab',
+        img: 'assets/prog-lab.png',
+        desc: 'Coaching intensif berbasis strengths untuk membangun arah hidup dan karier yang autentik dan berkelanjutan, melalui 6 sesi coaching (90–120 menit) selama 2–3 bulan.',
+        ideal: ['Profesional yang merasa stuck dalam karier', 'Individu dalam masa transisi hidup', 'Pemimpin yang ingin berkembang lebih intentional'],
+        priceLabel: 'Program intensif', price: 'Custom', dur: '2–3 Bulan',
+        btnBg: '#eef3f8', btnColor: '#16293f', btnShadow: 'none',
+        cta: 'Konsultasikan',
+      },
+    ];
+    const footLayanan = [
+      { label: 'Layanan Individu', href: 'Hyouman Home.html#program' },
+      { label: 'Layanan Perusahaan', href: 'Layanan Perusahaan.html' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html' },
+    ];
+    const footProgram = [
+      { label: 'SEAL-A Basic', href: '#programs' },
+      { label: 'SEAL-A Signature', href: '#programs' },
+      { label: 'Strength Architecture Lab', href: '#programs' },
+    ];
+    const footSocial = [
+      { label: 'WhatsApp', href: 'http://wa.me/+6282299993655' },
+      { label: 'Instagram', href: 'https://www.instagram.com/thehyouman' },
+      { label: 'Linked In', href: 'https://www.linkedin.com/company/the-hyouman' },
+    ];
+
+    return {
+      navLinks, whys, programs, footLayanan, footProgram, footSocial,
+      navPad: this.state.scrolled ? '10px 0' : '16px 0',
+      navBg: this.state.scrolled ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.0)',
+      navShadow: this.state.scrolled ? '0 8px 30px rgba(22,41,63,.1)' : 'none',
+      topBtnOpacity: this.state.scrolled ? '1' : '0',
+      topBtnTransform: this.state.scrolled ? 'translateY(0)' : 'translateY(20px)',
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    };
+  }
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.style.transitionDelay = (parseInt(en.target.dataset.reveal || '0', 10) * 90) + 'ms';
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

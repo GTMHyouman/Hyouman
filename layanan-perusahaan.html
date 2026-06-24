@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#3423a5"/><circle cx="35" cy="42" r="9" fill="none" stroke="#fff" stroke-width="4"/><circle cx="58" cy="42" r="9" fill="none" stroke="#fff" stroke-width="4"/><path d="M30 60 q20 14 40 0" fill="none" stroke="#ff6b48" stroke-width="4" stroke-linecap="round"/></svg></template>
+<meta name="ext-resource-dependency" content="assets/ent-area-1.png">
+<meta name="ext-resource-dependency" content="assets/ent-area-2.png">
+<meta name="ext-resource-dependency" content="assets/ent-area-3.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Open Sauce Sans';font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:700;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:800;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-800-normal.woff2') format('woff2');}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Nunito Sans',system-ui,sans-serif;color:#16213f;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+@keyframes hy-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+::selection{background:#3423a5;color:#fff;}
+</style>
+</helmet>
+
+<div data-screen-label="Layanan Perusahaan" style="width:100%;overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ navPad }};background:{{ navBg }};backdrop-filter:blur(10px);box-shadow:{{ navShadow }};transition:padding .35s ease, background .35s ease, box-shadow .35s ease;">
+    <nav style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap;">
+      <a href="index.html" style="flex:none;display:flex;align-items:center;text-decoration:none;">
+        <img src="assets/ent-logo-color.png" alt="Hyouman Enterprise" style="height:34px;width:auto;display:block;">
+      </a>
+      <div style="display:flex;align-items:center;gap:2px;flex-wrap:nowrap;justify-content:flex-end;">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+          <a href="{{ link.href }}" style="position:relative;white-space:nowrap;text-decoration:none;color:{{ link.color }};font-weight:{{ link.weight }};font-size:13.5px;padding:8px 11px;border-radius:9px;transition:color .2s ease, background .2s ease;" style-hover="color:#3423a5;background:#eeecf8;">{{ link.label }}</a>
+        </sc-for>
+        <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="flex: none; white-space: nowrap; margin-left: 6px; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: #fff; font-family: 'Open Sauce Sans'; font-weight: 700; font-size: 13.5px; padding: 10px 18px; border-radius: 999px; box-shadow: 0 8px 20px rgba(52,35,165,.3); transition: transform .25s ease, box-shadow .25s ease; background-color: #ff6b48" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px rgba(52,35,165,.44);">Konsultasi Sekarang</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" style="padding-top:84px;">
+
+    <!-- ===== HERO ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(36px,5vw,64px) 24px clamp(20px,3vw,36px);">
+      <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,60px);align-items:center;">
+        <div data-reveal="0" style="opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+          
+          <h1 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-1.6px;margin:18px 0 0;color:#16213f;">Bangun Organisasi<br>yang Lebih Kuat,<br>Dimulai dari <span style="color: #ff6b48">Manusianya</span></h1>
+          <p style="max-width:480px;margin:20px 0 0;font-size:clamp(15px,1.6vw,17px);line-height:1.62;color:#4a5168;font-weight:500;">Hyouman Enterprise membantu organisasi memahami potensi talent, mengembangkan leadership, dan meningkatkan efektivitas tim melalui pendekatan berbasis strengths yang terukur dan aplikatif.</p>
+          <a href="#area" style="margin-top: 28px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: 'Open Sauce Sans'; font-weight: 700; font-size: 15px; padding: 15px 28px; border-radius: 999px; box-shadow: 0 14px 30px rgba(52,35,165,.32); transition: transform .25s ease, box-shadow .25s ease; background-color: #ff6b48" style-hover="transform:translateY(-3px);box-shadow:0 20px 38px rgba(52,35,165,.46);">Pelajari Selengkapnya <span>→</span></a>
+          <div style="margin-top:30px;display:flex;align-items:center;gap:12px;">
+            <div style="display:flex;">
+              <span style="width:30px;height:30px;border-radius:50%;background:#3423a5;border:2px solid #fff;"></span>
+              <span style="width:30px;height:30px;border-radius:50%;background:#5849c9;border:2px solid #fff;margin-left:-10px;"></span>
+              <span style="width:30px;height:30px;border-radius:50%;background:#8579e0;border:2px solid #fff;margin-left:-10px;"></span>
+            </div>
+            <span style="font-size:13.5px;font-weight:600;color:#6b7186;">Dipercaya oleh tim, founder, dan institusi pendidikan</span>
+          </div>
+        </div>
+        <div data-reveal="1" style="position:relative;opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+          <div id="galWrap" style="position:relative;border-radius:24px;overflow:hidden;box-shadow:0 26px 56px rgba(22,33,63,.24);aspect-ratio:4/5;max-width:420px;margin-left:auto;">
+            <img class="gal-img" data-i="0" src="assets/gal-1.png" alt="Workshop Hyouman Enterprise" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .9s ease;">
+            <img class="gal-img" data-i="1" src="assets/gal-2.png" alt="Workshop Hyouman Enterprise" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;">
+            <img class="gal-img" data-i="2" src="assets/gal-3.png" alt="Workshop Hyouman Enterprise" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;">
+            <img class="gal-img" data-i="3" src="assets/gal-4.png" alt="Workshop Hyouman Enterprise" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 62%,rgba(22,33,63,.45));pointer-events:none;"></div>
+            <div style="position:absolute;left:0;right:0;bottom:16px;z-index:3;display:flex;justify-content:center;gap:8px;">
+              <button class="gal-dot" data-i="0" onClick="{{ galGo0 }}" aria-label="Foto 1" style="width:22px;height:8px;border-radius:999px;border:none;cursor:pointer;background:#fff;transition:all .3s ease;"></button>
+              <button class="gal-dot" data-i="1" onClick="{{ galGo1 }}" aria-label="Foto 2" style="width:8px;height:8px;border-radius:999px;border:none;cursor:pointer;background:rgba(255,255,255,.55);transition:all .3s ease;"></button>
+              <button class="gal-dot" data-i="2" onClick="{{ galGo2 }}" aria-label="Foto 3" style="width:8px;height:8px;border-radius:999px;border:none;cursor:pointer;background:rgba(255,255,255,.55);transition:all .3s ease;"></button>
+              <button class="gal-dot" data-i="3" onClick="{{ galGo3 }}" aria-label="Foto 4" style="width:8px;height:8px;border-radius:999px;border:none;cursor:pointer;background:rgba(255,255,255,.55);transition:all .3s ease;"></button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AREA LAYANAN ===== -->
+    <section id="area" style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,92px) 24px;">
+      <div style="text-align:center;max-width:680px;margin:0 auto;">
+        <span data-reveal="0" style="display:inline-block;color:#3423a5;font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Area Layanan</span>
+        <h2 data-reveal="1" style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.8vw,42px);line-height:1.12;letter-spacing:-1px;color:#16213f;margin:12px 0 0;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Tiga cara kami mendampingi<br>pertumbuhan organisasi Anda</h2>
+        <p data-reveal="2" style="margin: 16px auto 0; max-width: 600px; text-align: center; font-size: 15.5px; line-height: 1.6; color: #5a6178; font-weight: 500; opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease;">Setiap program dirancang berbasis strengths. Terukur, aplikatif, dan dapat disesuaikan dengan konteks tim Anda.</p>
+      </div>
+      <div style="margin-top:clamp(34px,4vw,52px);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;">
+        <sc-for list="{{ areas }}" as="a" hint-placeholder-count="3">
+          <article data-reveal="{{ a.d }}" style="position:relative;display:flex;flex-direction:column;background:#fff;border:{{ a.border }};border-radius:22px;overflow:hidden;box-shadow:{{ a.shadow }};opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease, box-shadow .35s ease;" style-hover="transform:translateY(-8px);box-shadow:0 28px 56px rgba(52,35,165,.18);">
+            <sc-if value="{{ a.popular }}" hint-placeholder-val="{{ true }}">
+              <span style="position:absolute;top:16px;left:16px;z-index:2;background:#ff6b48;color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:11.5px;letter-spacing:.5px;padding:6px 13px;border-radius:999px;box-shadow:0 8px 18px rgba(52,35,165,.4);">★ Most Popular</span>
+            </sc-if>
+            <div style="height:188px;overflow:hidden;">
+              <img src="{{ a.img }}" alt="{{ a.title }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;" style-hover="transform:scale(1.05);">
+            </div>
+            <div style="padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;">
+              <h3 style="font-family:'Open Sauce Sans';font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.4px;margin:0;color:#16213f;">{{ a.title }}</h3>
+              <p style="margin:4px 0 0;font-family:'Open Sauce Sans';font-weight:700;font-size:14px;color:#3423a5;">{{ a.sub }}</p>
+              <p style="margin:14px 0 0;font-size:14px;line-height:1.55;color:#5a6178;font-weight:500;flex:1;">{{ a.desc }}</p>
+              <a href="{{ a.link }}" style="margin-top:20px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:'Open Sauce Sans';font-weight:700;font-size:14px;color:#3423a5;transition:gap .25s ease;" style-hover="gap:12px;">Pelajari <span>→</span></a>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ===== TALENT ANALYTICS FEATURE (indigo) ===== -->
+    <section id="detail-talent" style="background:#ff6b48;padding:clamp(54px,7vw,92px) 0;">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(36px,5vw,60px); align-items: center; position: relative">
+        
+        <div data-reveal="0" style="opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;">
+          <span style="display:inline-block;background:rgba(255,255,255,.14);color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:11.5px;letter-spacing:.5px;padding:6px 13px;border-radius:999px;">★ Most Popular</span>
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.6vw,40px);line-height:1.1;letter-spacing:-1px;color:#fff;margin:16px 0 0;">Talent Analytics<br>by Strengths Synergy</h2>
+          <p style="margin:18px 0 0;max-width:480px;font-size:15.5px;line-height:1.62;color:#ffe3da;font-weight:500;">Strengths Synergy adalah framework talent analytics yang membantu organisasi memahami potensi individu, komposisi tim, dan peluang pengembangan talent secara lebih strategis.</p>
+          <p style="margin:26px 0 14px;font-family:'Open Sauce Sans';font-weight:700;font-size:13px;letter-spacing:.5px;color:#fff;">Yang akan didapatkan perusahaan Anda:</p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="4">
+              <div style="display:flex;align-items:flex-start;gap:13px;">
+                <span style="flex:none;margin-top:1px;width:24px;height:24px;border-radius:7px;background:#3423a5;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">✓</span>
+                <span style="font-size:14.5px;line-height:1.45;color:#e4e0f7;font-weight:500;"><strong style="color:#fff;font-weight:800;">{{ d.t }}</strong> {{ d.s }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div data-reveal="1" style="position:relative;opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease;">
+          <div style="border-radius:22px;overflow:hidden;box-shadow:0 22px 48px rgba(0,0,0,.3);aspect-ratio:3/4;max-width:400px;margin-left:auto;">
+            <img src="assets/ent-area-1.png" alt="Talent Analytics by Strengths Synergy" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DEMO CTA ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,6vw,86px) 24px;">
+      <div data-reveal="0" style="display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,56px);align-items:center;opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;">
+        <div>
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-1px;color:#16213f;margin:0;">Ambil Keputusan Talent dengan <span style="color:#3423a5;">Lebih Percaya Diri</span></h2>
+          <p style="margin:18px 0 0;font-size:15.5px;line-height:1.62;color:#4a5168;font-weight:500;">Tidak ada dua organisasi yang memiliki tantangan yang sama. Kami akan membantu merancang pendekatan analisis yang sesuai dengan tujuan dan kebutuhan bisnis Anda.</p>
+          <p style="margin:16px 0 0;font-size:15.5px;line-height:1.62;color:#4a5168;font-weight:500;">Jadwalkan demo bersama tim kami untuk melihat bagaimana talent analytics dapat membantu pengembangan talent, leadership, dan kinerja organisasi Anda.</p>
+          <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: 'Open Sauce Sans'; font-weight: 700; font-size: 15.5px; padding: 15px 30px; border-radius: 999px; box-shadow: 0 14px 30px rgba(52,35,165,.32); transition: transform .25s ease, box-shadow .25s ease; background-color: #ff6b48" style-hover="transform:translateY(-3px);box-shadow:0 20px 38px rgba(52,35,165,.46);">Jadwalkan Demo GRATIS <span>→</span></a>
+        </div>
+        <div style="position:relative;align-self:stretch;min-height:340px;overflow:hidden;">
+          <img src="assets/ent-tablet.png" alt="Strength Synergy Check Up Report" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM DETAIL: SEAL ===== -->
+    <section id="detail-people" style="background:#f5f4fb;padding:clamp(48px,6vw,80px) 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,56px);align-items:center;">
+        <div data-reveal="0" style="opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;order:1;">
+          <div style="border-radius:22px;overflow:hidden;box-shadow:0 22px 48px rgba(22,33,63,.2);aspect-ratio:3/4;max-width:380px;">
+            <img src="assets/ent-seal.png" alt="People Development SEAL Workshop" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+        <div data-reveal="1" style="opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;order:2;">
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(25px,3.2vw,38px);line-height:1.1;letter-spacing:-.8px;color:#16213f;margin:0;">People Development</h2>
+          <p style="margin:4px 0 0;font-family:'Open Sauce Sans';font-weight:700;font-size:16px;color:#3423a5;">by SEAL Workshop</p>
+          <p style="margin:18px 0 0;max-width:480px;font-size:15.5px;line-height:1.62;color:#4a5168;font-weight:500;">Program pembelajaran berbasis strengths untuk membantu individu dan tim memahami potensi, meningkatkan kolaborasi, dan memperkuat efektivitas kerja. Setiap program dapat disesuaikan dengan kebutuhan, tantangan, dan konteks organisasi.</p>
+          <p style="margin:24px 0 12px;font-family:'Open Sauce Sans';font-weight:700;font-size:13px;letter-spacing:.5px;color:#16213f;">Area fokus yang dapat dikembangkan:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <sc-for list="{{ sealFocus }}" as="f" hint-placeholder-count="3">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e3e0f2;color:#3a3357;font-weight:600;font-size:14px;padding:9px 16px;border-radius:999px;">✦ {{ f }}</span>
+            </sc-for>
+          </div>
+          <div style="margin-top:26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+            <div style="background:#eeecf8;border-radius:14px;padding:12px 20px;">
+              <span style="font-size:12.5px;color:#6b7186;font-weight:600;">Investasi mulai dari</span>
+              <p style="margin:2px 0 0;font-family:'Open Sauce Sans';font-weight:800;font-size:21px;color:#3423a5;letter-spacing:-.5px;">Rp9.999.000 <span style="font-size:.62em;color:#6b7186;font-weight:600;">/ 15 peserta</span></p>
+            </div>
+            <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #fff; font-family: 'Open Sauce Sans'; font-weight: 700; font-size: 14.5px; padding: 13px 24px; border-radius: 999px; box-shadow: 0 12px 26px rgba(52,35,165,.3); transition: transform .25s ease; background-color: #ff6b48" style-hover="transform:translateY(-2px);">Konsultasikan <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM DETAIL: LEADERSHIP ===== -->
+    <section id="detail-leadership" style="max-width:1180px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;">
+      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,56px);align-items:center;">
+        <div data-reveal="0" style="opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;">
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(25px,3.2vw,38px);line-height:1.1;letter-spacing:-.8px;color:#16213f;margin:0;">Leadership Coaching</h2>
+          <p style="margin:4px 0 0;font-family:'Open Sauce Sans';font-weight:700;font-size:16px;color:#3423a5;">by Strengths Synergy</p>
+          <p style="margin:18px 0 0;max-width:480px;font-size:15.5px;line-height:1.62;color:#4a5168;font-weight:500;">Program coaching intensif untuk pemimpin, manager, dan business owner yang ingin membangun kepemimpinan yang lebih efektif serta mengembangkan tim secara lebih strategis.</p>
+          <p style="margin:24px 0 12px;font-family:'Open Sauce Sans';font-weight:700;font-size:13px;letter-spacing:.5px;color:#16213f;">Area fokus:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <sc-for list="{{ leadFocus }}" as="f" hint-placeholder-count="3">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:#f5f4fb;border:1px solid #e3e0f2;color:#3a3357;font-weight:600;font-size:14px;padding:9px 16px;border-radius:999px;">✦ {{ f }}</span>
+            </sc-for>
+          </div>
+          <p style="margin:18px 0 0;font-size:14px;line-height:1.55;color:#6b7186;font-weight:500;">Setiap sesi dirancang secara personal sesuai konteks, tantangan, dan tujuan pengembangan masing-masing leader.</p>
+          <div style="margin-top:26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+            <div style="background:#eeecf8;border-radius:14px;padding:12px 20px;">
+              <span style="font-size:12.5px;color:#6b7186;font-weight:600;">Investasi mulai dari</span>
+              <p style="margin:2px 0 0;font-family:'Open Sauce Sans';font-weight:800;font-size:21px;color:#3423a5;letter-spacing:-.5px;">Rp18.000.000</p>
+            </div>
+            <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #fff; font-family: 'Open Sauce Sans'; font-weight: 700; font-size: 14.5px; padding: 13px 24px; border-radius: 999px; box-shadow: 0 12px 26px rgba(52,35,165,.3); transition: transform .25s ease; background-color: #ff6b48" style-hover="transform:translateY(-2px);">Konsultasikan <span>→</span></a>
+          </div>
+        </div>
+        <div data-reveal="1" style="opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;">
+          <div style="border-radius:22px;overflow:hidden;box-shadow:0 22px 48px rgba(22,33,63,.2);aspect-ratio:3/4;max-width:380px;margin-left:auto;">
+            <img src="assets/ent-leadership.png" alt="Leadership Coaching Hyouman" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CLIENT STORY ===== -->
+    <section style="background:#f5f4fb;padding:clamp(54px,7vw,90px) 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 24px;">
+        <div style="text-align:center;">
+          <span data-reveal="0" style="display:inline-block;color:#3423a5;font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Client Story</span>
+          <h2 data-reveal="1" style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.8vw,42px);line-height:1.12;letter-spacing:-1px;color:#16213f;margin:12px 0 0;opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;">Cerita Organisasi yang berhasil<br>Mengembangkan Tim Mereka</h2>
+        </div>
+        <div style="margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <article data-reveal="{{ t.d }}" style="display:flex;flex-direction:column;background:#fff;border-radius:20px;padding:30px 28px;box-shadow:0 16px 38px rgba(22,33,63,.1);opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease, box-shadow .35s ease;" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(52,35,165,.16);">
+              <span style="font-family:Georgia,serif;font-size:54px;line-height:.6;color:#d6d1ee;height:30px;">“</span>
+              <p style="flex:1;margin:8px 0 22px;font-size:15px;line-height:1.6;color:#3a3f54;font-weight:500;">{{ t.quote }}</p>
+              <div style="display:flex;align-items:center;gap:13px;border-top:1px solid #eef0f6;padding-top:18px;">
+                <span style="flex:none;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#5849c9,#3423a5);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Open Sauce Sans';font-weight:800;font-size:18px;">{{ t.initial }}</span>
+                <div>
+                  <p style="margin:0;font-family:'Open Sauce Sans';font-weight:700;font-size:15px;color:#16213f;">{{ t.name }}</p>
+                  <p style="margin:2px 0 0;font-size:12.5px;color:#7b8094;font-weight:600;">{{ t.role }}</p>
+                </div>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA (indigo) ===== -->
+    <section id="cta" style="max-width:1180px;margin:0 auto;padding:clamp(48px,6vw,80px) 24px;">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#3423a5 0%,#5849c9 100%);box-shadow:0 26px 60px rgba(52,35,165,.32);display:grid;grid-template-columns:1.1fr .9fr;align-items:end;opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+        <div style="padding:clamp(36px,5vw,60px);">
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,4vw,46px);line-height:1.04;letter-spacing:-1.2px;color:#fff;margin:0;">MARI DISKUSIKAN<br>KEBUTUHAN<br>ORGANISASI ANDA</h2>
+          <p style="margin:20px 0 0;max-width:430px;font-size:15.5px;line-height:1.6;color:#dcd8f3;font-weight:500;">Setiap organisasi memiliki tantangan yang berbeda. Tim Hyouman siap membantu Anda menemukan pendekatan yang paling tepat.</p>
+          <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#fff;color:#3423a5;font-family:'Open Sauce Sans';font-weight:800;font-size:15.5px;padding:15px 30px;border-radius:999px;box-shadow:0 14px 30px rgba(0,0,0,.2);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.3);">Jadwalkan Konsultasi <span>→</span></a>
+        </div>
+        <div style="position: relative; min-height: 300px; align-self: end; display: flex; align-items: flex-end; justify-content: center; height: 400px">
+          
+          <img src="./untitled-design-9--mqooy72w.png" alt="Tim Hyouman Enterprise" loading="lazy" style="display:block;width:100%;max-width:440px;height:auto;align-self:flex-end;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer style="background:#16213f;color:#cdd2e2;padding:56px 24px 40px;">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;align-items:start;">
+        <div style="max-width:300px;">
+          <a href="index.html" style="display:inline-flex;align-items:center;text-decoration:none;">
+            <img src="assets/ent-logo-white.png" alt="Hyouman Enterprise" style="height:44px;width:auto;display:block;">
+          </a>
+          <p style="margin:20px 0 0;font-size:14.5px;line-height:1.6;color:#aeb4c8;font-weight:600;">Mendukung individu dan organisasi berkembang, bukan dengan memperbaiki kelemahan, tapi dengan memaksimalkan kekuatan.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">LAYANAN</p>
+          <sc-for list="{{ footLayanan }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aeb4c8;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">PROGRAM</p>
+          <sc-for list="{{ footProgram }}" as="link" hint-placeholder-count="5">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aeb4c8;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">HUBUNGI KAMI</p>
+          <sc-for list="{{ footSocial }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" target="_blank" rel="noopener" style="text-decoration:none;color:#aeb4c8;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <p style="max-width:1180px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#7e85a0;">© 2026 TheHyouman. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+  </main>
+
+  <button onClick="{{ scrollTop }}" aria-label="Kembali ke atas" style="position:fixed;right:24px;bottom:24px;z-index:60;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:#3423a5;color:#fff;font-size:20px;box-shadow:0 12px 28px rgba(52,35,165,.4);opacity:{{ topBtnOpacity }};transform:{{ topBtnTransform }};transition:opacity .3s ease, transform .3s ease;" style-hover="transform:translateY(-4px);">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false };
+  _gal = 0;
+
+  renderVals() {
+
+    const navLinks = [
+      { label: 'Home', href: 'Hyouman Home.html', color: '#33384c', weight: '600' },
+      { label: 'Program', href: 'Program.html', color: '#33384c', weight: '600' },
+      { label: 'Layanan Perusahaan', href: '#top', color: '#3423a5', weight: '800' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html', color: '#33384c', weight: '600' },
+      { label: 'Kontak Kami', href: 'Kontak Kami.html', color: '#33384c', weight: '600' },
+    ];
+    const areas = [
+      { d: '0', popular: true, border: '2px solid #ff6b48', shadow: '0 20px 46px rgba(255,107,72,.18)', link: '#detail-talent', img: 'assets/ent-area-1.png', title: 'Talent Analytics', sub: 'by Strengths Synergy', desc: 'Memahami potensi, kekuatan, dan dinamika talent untuk mendukung strategi organisasi.' },
+      { d: '1', popular: false, border: '1px solid #e6e3f2', shadow: '0 16px 38px rgba(22,33,63,.08)', link: '#detail-people', img: 'assets/ent-area-2.png', title: 'People Development', sub: 'by SEAL Workshop', desc: 'Meningkatkan kapabilitas tim melalui program pembelajaran berbasis strengths.' },
+      { d: '2', popular: false, border: '1px solid #e6e3f2', shadow: '0 16px 38px rgba(22,33,63,.08)', link: '#detail-leadership', img: 'assets/ent-area-3.png', title: 'Leadership Coaching', sub: 'by Strengths Synergy', desc: 'Mendampingi pemimpin dan business owner dalam menghadapi tantangan kepemimpinan.' },
+    ];
+    const deliverables = [
+      { t: 'Strengths Assessment:', s: 'Pemetaan talent dalam organisasi.' },
+      { t: 'Talent Mapping Dashboard:', s: 'Visualisasi komposisi talent.' },
+      { t: 'Team Analytics Report:', s: 'Analisis mendalam mengenai dinamika tim, potensi talent, dan area pengembangan.' },
+      { t: 'Strategic Discussion Session:', s: 'Sesi konsultasi untuk menerjemahkan insight menjadi tindakan.' },
+    ];
+    const sealFocus = ['Leadership Growth', 'Collaborative Performance', 'Innovation Mindset & Capability'];
+    const leadFocus = ['Strengths-Based Leadership', 'Founder & Leadership Challenges', 'Team & People Development'];
+    const testimonials = [
+      { d: '0', quote: 'Journeynya sangat baik dan substantif. Tim kami sangat senang dapat peta kekuatan dan rekomendasi perbaikannya.', name: 'Dwi Indra Purnomo', role: 'Founder, The Local Enablers', initial: 'D' },
+      { d: '1', quote: 'The Hyouman bisa memenuhi ekspektasi saya melalui seminar yang sudah dijalankan 3x bersama tim Beyond. Mempermudah saya sebagai pemimpin untuk mengajak mereka berkembang dalam hal apapun.', name: 'Lydia Agustin', role: 'BEM, Beyond Education Centre', initial: 'L' },
+      { d: '2', quote: 'Melalui tes dan melalui 1-on-1 bisa memetakan cukup akurat dengan kondisi kami.', name: 'Michael George', role: 'Direktur, Kairos Group', initial: 'M' },
+    ];
+    const footLayanan = [
+      { label: 'Layanan Individu', href: 'Hyouman Home.html#program' },
+      { label: 'Layanan Perusahaan', href: '#top' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html' },
+    ];
+    const footProgram = [
+      { label: 'SEAL-A Basic', href: 'Program.html#programs' },
+      { label: 'SEAL-A Signature', href: 'Program.html#programs' },
+      { label: 'Strength Architecture Lab', href: 'Program.html#programs' },
+    ];
+    const footSocial = [
+      { label: 'WhatsApp', href: 'http://wa.me/+6282299993655' },
+      { label: 'Instagram', href: 'https://www.instagram.com/thehyouman' },
+      { label: 'Linked In', href: 'https://www.linkedin.com/company/the-hyouman' },
+    ];
+
+    return {
+      galPrev: () => this.goGal(this._gal + 3),
+      galNext: () => this.goGal(this._gal + 1),
+      galGo0: () => this.goGal(0),
+      galGo1: () => this.goGal(1),
+      galGo2: () => this.goGal(2),
+      galGo3: () => this.goGal(3),
+      navLinks, areas, deliverables, sealFocus, leadFocus, testimonials,
+      footLayanan, footProgram, footSocial,
+      navPad: this.state.scrolled ? '10px 0' : '16px 0',
+      navBg: this.state.scrolled ? 'rgba(255,255,255,.92)' : 'rgba(255,255,255,0)',
+      navShadow: this.state.scrolled ? '0 8px 30px rgba(22,33,63,.1)' : 'none',
+      topBtnOpacity: this.state.scrolled ? '1' : '0',
+      topBtnTransform: this.state.scrolled ? 'translateY(0)' : 'translateY(20px)',
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    };
+  }
+
+  goGal(i) {
+    this._gal = ((i % 4) + 4) % 4;
+    document.querySelectorAll('.gal-img').forEach((el) => {
+      el.style.opacity = (+el.dataset.i === this._gal) ? '1' : '0';
+    });
+    document.querySelectorAll('.gal-dot').forEach((el) => {
+      const on = +el.dataset.i === this._gal;
+      el.style.width = on ? '22px' : '8px';
+      el.style.background = on ? '#fff' : 'rgba(255,255,255,.55)';
+    });
+    clearInterval(this._galAuto);
+    this._galAuto = setInterval(() => { if (!document.hidden) this.goGal(this._gal + 1); }, 4000);
+  }
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.style.transitionDelay = (parseInt(en.target.dataset.reveal || '0', 10) * 90) + 'ms';
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+
+    this._galAuto = setInterval(() => { if (!document.hidden) this.goGal(this._gal + 1); }, 4000);
+    const gw = document.getElementById('galWrap');
+    if (gw) {
+      gw.addEventListener('mouseenter', () => clearInterval(this._galAuto));
+      gw.addEventListener('mouseleave', () => { this._galAuto = setInterval(() => { if (!document.hidden) this.goGal(this._gal + 1); }, 4000); });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    clearInterval(this._galAuto);
+  }
+}
+</script>
+</body>
+</html>

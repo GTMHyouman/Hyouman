@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#16293f"/><circle cx="35" cy="42" r="9" fill="none" stroke="#ff5964" stroke-width="4"/><circle cx="58" cy="42" r="9" fill="none" stroke="#ff5964" stroke-width="4"/><path d="M30 60 q20 14 40 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Open Sauce Sans';font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:700;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Open Sauce Sans';font-weight:800;font-display:swap;src:url('https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-sans@5/files/open-sauce-sans-latin-800-normal.woff2') format('woff2');}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Nunito Sans',system-ui,sans-serif;color:#16293f;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+@keyframes hy-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+::selection{background:#3b7cc0;color:#fff;}
+</style>
+</helmet>
+
+<div data-screen-label="Kontak Kami" style="width:100%;overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:{{ navPad }};background:{{ navBg }};backdrop-filter:blur(10px);box-shadow:{{ navShadow }};transition:padding .35s ease, background .35s ease, box-shadow .35s ease;">
+    <nav style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap;">
+      <a href="index.html" style="flex:none;display:flex;align-items:center;text-decoration:none;">
+        <img src="assets/logo-hyouman.png" alt="Hyouman" style="height:33px;width:auto;display:block;">
+      </a>
+      <div style="display:flex;align-items:center;gap:2px;flex-wrap:nowrap;justify-content:flex-end;">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+          <a href="{{ link.href }}" style="position:relative;white-space:nowrap;text-decoration:none;color:{{ link.color }};font-weight:{{ link.weight }};font-size:13.5px;padding:8px 11px;border-radius:9px;transition:color .2s ease, background .2s ease;" style-hover="color:#16293f;background:#eef3f8;">{{ link.label }}</a>
+        </sc-for>
+        <a href="#cta" style="flex:none;white-space:nowrap;margin-left:6px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:linear-gradient(135deg,#f5333f,#ff6470);color:#fff;font-family:'Open Sauce Sans';font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px rgba(245,51,63,.32);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px rgba(245,51,63,.42);">Konsultasi Sekarang</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" style="padding-top:84px;">
+
+    <!-- ===== TENTANG HYOUMAN ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,68px) 24px clamp(8px,2vw,20px);">
+      <div data-reveal="0" style="max-width:860px;opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease;">
+        
+        <h1 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1.04;letter-spacing:-1.6px;margin:18px 0 0;color:#13243a;">Tentang <span style="color:#2f5e8c;">Hyouman</span></h1>
+        <p style="margin:20px 0 0;font-size:clamp(15px,1.6vw,17px);line-height:1.65;color:#3c4d61;font-weight:500;">The Hyouman adalah mitra pengembangan manusia berbasis strengths yang membantu individu, tim, dan organisasi memahami potensi mereka serta mengubahnya menjadi pertumbuhan yang nyata.</p>
+        <p style="margin:16px 0 0;font-size:clamp(15px,1.6vw,17px);line-height:1.65;color:#4a5a6c;font-weight:500;">Kami percaya setiap orang memiliki kekuatan unik yang dapat menjadi fondasi untuk berkembang, berkontribusi, dan mencapai tujuan yang lebih bermakna. Melalui assessment, konsultasi, coaching, dan learning experiences, kami membantu menerjemahkan pemahaman diri menjadi tindakan yang relevan dalam kehidupan, pekerjaan, dan organisasi.</p>
+      </div>
+    </section>
+
+    <!-- ===== NILAI (EPIC) ===== -->
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,48px) 24px;">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(180deg,#4987be 0%,#2c5275 52%,#16293f 100%);box-shadow:0 24px 56px rgba(22,41,63,.24);padding:clamp(34px,4.5vw,56px);opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+        <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(24px,3.4vw,36px);line-height:1.1;letter-spacing:-.8px;color:#fff;margin:0;">Nilai yang Menjadi Dasar Kami</h2>
+        <div style="margin-top:clamp(28px,3.5vw,42px);display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+            <div data-reveal="{{ v.d }}" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:24px 22px;opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease, background .3s ease, border-color .3s ease;" style-hover="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.34);">
+              <span style="display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:14px;background:#fff;color:#2f5e8c;font-family:'Open Sauce Sans';font-weight:800;font-size:26px;">{{ v.l }}</span>
+              <p style="margin:18px 0 0;font-family:'Open Sauce Sans';font-weight:800;font-size:18px;color:#fff;letter-spacing:-.3px;">{{ v.t }}</p>
+              <p style="margin:8px 0 0;font-size:13.5px;line-height:1.5;color:#cdddec;font-weight:500;">{{ v.d2 }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT CTA ===== -->
+    <section id="cta" style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) 24px;">
+      <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#2f5e8c 0%,#16293f 100%);box-shadow:0 26px 60px rgba(22,41,63,.3);display:grid;grid-template-columns:1.05fr .95fr;align-items:end;opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;">
+        <div style="padding:clamp(36px,5vw,60px);">
+          <h2 style="font-family:'Open Sauce Sans';font-weight:800;font-size:clamp(27px,3.8vw,44px);line-height:1.06;letter-spacing:-1.2px;color:#fff;margin:0;">Kami selalu terbuka untuk berdiskusi bersama Anda</h2>
+          <p style="margin:20px 0 0;max-width:460px;font-size:15.5px;line-height:1.62;color:#cdd9e6;font-weight:500;">Mulai dari pengembangan diri, pengembangan tim, program pendidikan, peluang kolaborasi, atau sekedar mengenal Hyouman lebih jauh — tim Hyouman siap membantu.</p>
+          <a href="http://wa.me/+6282299993655" target="_blank" rel="noopener" style="margin-top:26px;display:inline-flex;align-items:center;gap:11px;text-decoration:none;background:linear-gradient(135deg,#f5333f,#ff6470);color:#fff;font-family:'Open Sauce Sans';font-weight:800;font-size:15.5px;padding:15px 28px 15px 16px;border-radius:999px;box-shadow:0 14px 30px rgba(245,51,63,.4);transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 20px 40px rgba(245,51,63,.54);"><span style="display:inline-flex;width:30px;height:30px;border-radius:50%;background:#fff;align-items:center;justify-content:center;flex:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5333f"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zm4.52 10.4c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg></span>Diskusikan Kebutuhan Anda!</a>
+        </div>
+        <div style="position:relative;min-height:430px;align-self:end;display:flex;align-items:flex-end;justify-content:center;">
+          <img src="./untitled-design-9--mqolccpn.png" alt="Tim Hyouman siap membantu" loading="lazy" style="display:block;width:100%;max-width:480px;height:auto;align-self:flex-end;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer style="background:#16293f;color:#cdd7e2;padding:56px 24px 40px;">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;align-items:start;">
+        <div style="max-width:300px;">
+          <a href="index.html" style="display:inline-flex;align-items:center;text-decoration:none;">
+            <img src="assets/logo-hyouman-white.png" alt="Hyouman" style="height:42px;width:auto;display:block;">
+          </a>
+          <p style="margin:20px 0 0;font-size:14.5px;line-height:1.6;color:#aebccb;font-weight:600;">Mendukung individu dan organisasi berkembang, bukan dengan memperbaiki kelemahan, tapi dengan memaksimalkan kekuatan.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">LAYANAN</p>
+          <sc-for list="{{ footLayanan }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">PROGRAM</p>
+          <sc-for list="{{ footProgram }}" as="link" hint-placeholder-count="5">
+            <a href="{{ link.href }}" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0 0 4px;font-family:'Open Sauce Sans';font-weight:800;font-size:13px;letter-spacing:1.5px;color:#fff;">HUBUNGI KAMI</p>
+          <sc-for list="{{ footSocial }}" as="link" hint-placeholder-count="3">
+            <a href="{{ link.href }}" target="_blank" rel="noopener" style="text-decoration:none;color:#aebccb;font-weight:600;font-size:15px;width:fit-content;transition:color .2s ease;" style-hover="color:#fff;">{{ link.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <p style="max-width:1180px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#7e92a8;">© 2026 TheHyouman. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+  </main>
+
+  <button onClick="{{ scrollTop }}" aria-label="Kembali ke atas" style="position:fixed;right:24px;bottom:24px;z-index:60;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#3b7cc0,#16293f);color:#fff;font-size:20px;box-shadow:0 12px 28px rgba(22,41,63,.4);opacity:{{ topBtnOpacity }};transform:{{ topBtnTransform }};transition:opacity .3s ease, transform .3s ease;" style-hover="transform:translateY(-4px);">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false };
+
+  renderVals() {
+    const navLinks = [
+      { label: 'Home', href: 'Hyouman Home.html', color: '#33465c', weight: '600' },
+      { label: 'Program', href: 'Program.html', color: '#33465c', weight: '600' },
+      { label: 'Layanan Perusahaan', href: 'Layanan Perusahaan.html', color: '#33465c', weight: '600' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html', color: '#33465c', weight: '600' },
+      { label: 'Kontak Kami', href: '#top', color: '#16293f', weight: '800' },
+    ];
+    const values = [
+      { d: '0', l: 'E', t: 'Empowering', d2: 'Membantu setiap orang menemukan dan memaksimalkan kekuatannya.' },
+      { d: '1', l: 'P', t: 'Personalized', d2: 'Pendekatan yang disesuaikan dengan konteks dan kebutuhan unik.' },
+      { d: '2', l: 'I', t: 'Innovative', d2: 'Terus menghadirkan cara baru yang relevan dalam pengembangan manusia.' },
+      { d: '3', l: 'C', t: 'Collaborative', d2: 'Bertumbuh bersama melalui kemitraan yang saling menguatkan.' },
+    ];
+    const contacts = [
+      { icon: '✆', label: 'WhatsApp', value: '+62 822-9999-3655', href: 'http://wa.me/+6282299993655' },
+      { icon: '◎', label: 'Instagram', value: '@thehyouman', href: 'https://www.instagram.com/thehyouman' },
+      { icon: 'in', label: 'LinkedIn', value: 'The Hyouman', href: 'https://www.linkedin.com/company/the-hyouman' },
+    ];
+    const footLayanan = [
+      { label: 'Layanan Individu', href: 'Hyouman Home.html#program' },
+      { label: 'Layanan Perusahaan', href: 'Layanan Perusahaan.html' },
+      { label: 'Layanan Universitas', href: 'Layanan Universitas.html' },
+    ];
+    const footProgram = [
+      { label: 'SEAL-A Basic', href: 'Program.html#programs' },
+      { label: 'SEAL-A Signature', href: 'Program.html#programs' },
+      { label: 'Strength Architecture Lab', href: 'Program.html#programs' },
+    ];
+    const footSocial = [
+      { label: 'WhatsApp', href: 'http://wa.me/+6282299993655' },
+      { label: 'Instagram', href: 'https://www.instagram.com/thehyouman' },
+      { label: 'Linked In', href: 'https://www.linkedin.com/company/the-hyouman' },
+    ];
+
+    return {
+      navLinks, values, contacts, footLayanan, footProgram, footSocial,
+      navPad: this.state.scrolled ? '10px 0' : '16px 0',
+      navBg: this.state.scrolled ? 'rgba(255,255,255,.92)' : 'rgba(255,255,255,0)',
+      navShadow: this.state.scrolled ? '0 8px 30px rgba(22,41,63,.1)' : 'none',
+      topBtnOpacity: this.state.scrolled ? '1' : '0',
+      topBtnTransform: this.state.scrolled ? 'translateY(0)' : 'translateY(20px)',
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    };
+  }
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.style.transitionDelay = (parseInt(en.target.dataset.reveal || '0', 10) * 90) + 'ms';
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>
